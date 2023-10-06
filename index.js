@@ -22,6 +22,7 @@ function initGame(){
         boxes[index].style.pointerEvents="all";
         box.classList = `box box${index+1}`;
     })
+    ResetGameBtn.classList.remove("active");
     newGameBtn.classList.remove("active");
     gameInfo.innerText=`Current Player-${currPlayer}`;
 }
@@ -96,6 +97,7 @@ function checkGameStatus() {
 
     if(fillCount === 9) {
         gameInfo.innerText = "Game Tied !";
+        ResetGameBtn.classList.remove("active");
         newGameBtn.classList.add("active");
     }
 }
